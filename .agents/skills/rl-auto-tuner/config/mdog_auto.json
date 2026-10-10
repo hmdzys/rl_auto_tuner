@@ -1,0 +1,66 @@
+{
+  "schema": 1,
+  "mode": "controlled",
+  "authorization": {
+    "granted_by": null,
+    "scope": "Template only. Obtain explicit authorization from the current human user before autonomous local simulation training.",
+    "repeat_confirmation_required": true,
+    "hardware_deployment": false
+  },
+  "project": "/path/to/IsaacLab",
+  "python": "/path/to/IsaacLab/.venv/bin/python",
+  "source": "/path/to/mdog_gait",
+  "recommended_model_file": "/path/to/mdog_gait/recommended_model.json",
+  "urdf": "/path/to/mdog_ws/src/mdog_control/urdf/mdog.urdf",
+  "experiment_root": "/path/to/rl_auto_tuner/experiments/mdog-auto",
+  "training": {
+    "default_num_envs": 8000,
+    "default_iterations": 1000,
+    "headless": true,
+    "default_stage": "flat",
+    "seed": 42,
+    "allow_adaptive_num_envs_and_iterations": true,
+    "suggested_num_envs_range": [
+      512,
+      16000
+    ],
+    "suggested_iterations_range": [
+      100,
+      3000
+    ],
+    "max_oom_retries": 2,
+    "oom_env_reduction_factor": 0.75,
+    "default_resume_optimizer": true,
+    "default_curriculum_progress": "resume"
+  },
+  "gpu": {
+    "vram_gib": 16,
+    "user_reported_usage_gib_at_8000_envs": 10,
+    "soft_usage_target_gib": 14,
+    "parallel_training_jobs": 1,
+    "stop_other_user_jobs": false
+  },
+  "limits": {
+    "max_rounds_per_invocation": 3,
+    "max_candidates_per_round": 1,
+    "max_training_seconds": 7200,
+    "max_invocation_seconds": 21600,
+    "max_identical_failure_retries": 0
+  },
+  "evaluation": {
+    "scenarios": [
+      "stand",
+      "forward",
+      "sideways",
+      "turn"
+    ],
+    "seeds": [
+      42,
+      43
+    ],
+    "seconds": 30,
+    "num_envs": 4,
+    "missing_metrics_block_promotion": true,
+    "calibration_required_for_promotion": true
+  }
+}

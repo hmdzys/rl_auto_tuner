@@ -1,0 +1,12 @@
+__pycache__/
+.pytest_cache/
+*.pyc
+experiments/
+reports/
+logs/
+outputs/
+*.pt
+*.pth
+*.onnx
+.env
+.env.*

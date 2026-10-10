@@ -1,0 +1,51 @@
+{
+  "schema": 1,
+  "protocol": {
+    "seeds": [
+      42
+    ],
+    "scenarios": [
+      "stand",
+      "forward"
+    ],
+    "seconds": 30,
+    "num_envs": 4,
+    "terrain": "flat",
+    "dt": 0.02,
+    "settling_seconds": 1,
+    "model_hash": "synthetic-robot",
+    "control_hash": "synthetic-controller"
+  },
+  "task": {
+    "velocity_error": 0.12,
+    "yaw_error": 0.1
+  },
+  "pose": {
+    "base_height_error": 0.01,
+    "roll_pitch_error": 0.1,
+    "joint_limit_violations": 0,
+    "joint_pose_deviation": 0.1,
+    "foot_slip_ratio": 0.05,
+    "gait_asymmetry": 0.1,
+    "action_smoothness": 0.02
+  },
+  "safety": {
+    "fall_rate": 0,
+    "torque_saturation_ratio": 0.01
+  },
+  "coverage": {
+    "samples": 1000,
+    "episodes": 12,
+    "scenario_seeds": [
+      [
+        "stand",
+        42
+      ],
+      [
+        "forward",
+        42
+      ]
+    ]
+  },
+  "provenance": "synthetic schema example; not a trained policy"
+}

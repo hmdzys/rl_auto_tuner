@@ -1,0 +1,4 @@
+interface:
+  display_name: "机器狗强化学习自动调优"
+  short_description: "分析姿态、修改奖励并评估重训候选，支持明确授权后的自动迭代"
+  default_prompt: "使用 $rl-auto-tuner 核对当前项目路径和用户授权，分析训练与姿态并执行允许的候选训练及配对评估。"

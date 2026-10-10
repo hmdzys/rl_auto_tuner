@@ -1,0 +1,16 @@
+{
+  "schema": 1,
+  "status": "review_required",
+  "reviewed_by": null,
+  "checks": {
+    "joint_mapping": false,
+    "default_pose_fk": false,
+    "controller": false,
+    "action_scale_dt": false,
+    "com_inertia": false,
+    "collision_contacts": false,
+    "converted_asset_equivalence": false
+  },
+  "evidence": [],
+  "note": "Record verified checks and source/asset/control file sha256; do not set passed without review."
+}

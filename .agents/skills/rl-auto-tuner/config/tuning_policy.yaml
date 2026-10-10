@@ -1,0 +1,109 @@
+{
+  "schema": 1,
+  "mode": "controlled",
+  "profile": "example_flat_ground_requires_calibration",
+  "max_relative_change": 0.25,
+  "max_candidates": 3,
+  "timeout_seconds": 1800,
+  "pose_regression_tolerance": 0.05,
+  "minimum_improvement": 0.01,
+  "minimum_samples": 100,
+  "minimum_episodes": 4,
+  "required_scenarios": [
+    "stand",
+    "forward"
+  ],
+  "task_limits": {
+    "velocity_error": 0.2,
+    "yaw_error": 0.2
+  },
+  "pose_limits": {
+    "base_height_error": 0.04,
+    "roll_pitch_error": 0.2,
+    "joint_limit_violations": 0,
+    "joint_pose_deviation": 0.3,
+    "foot_slip_ratio": 0.15,
+    "gait_asymmetry": 0.2,
+    "action_smoothness": 0.15
+  },
+  "safety_limits": {
+    "fall_rate": 0.02,
+    "torque_saturation_ratio": 0.1
+  },
+  "bounds": {
+    "weights.upright": [
+      -10,
+      -0.1
+    ],
+    "weights.height": [
+      -60,
+      -0.1
+    ],
+    "weights.rotation": [
+      -2,
+      -0.001
+    ],
+    "weights.smooth": [
+      -0.2,
+      -0.0001
+    ],
+    "weights.sliding": [
+      -2,
+      -0.001
+    ],
+    "weights.joint_limits": [
+      -10,
+      -0.1
+    ],
+    "weights.stand_still": [
+      -5,
+      -0.01
+    ],
+    "weights.forward": [
+      0.1,
+      5
+    ],
+    "weights.heading": [
+      0.1,
+      5
+    ],
+    "weights.stepping": [
+      0.001,
+      0.1
+    ],
+    "commands.initial_fraction": [
+      0.1,
+      1
+    ],
+    "commands.ramp_iterations": [
+      100,
+      10000
+    ],
+    "randomization.push_ramp_iterations": [
+      100,
+      10000
+    ],
+    "weights.clearance": [
+      0.0,
+      2.0
+    ],
+    "gait.coordination_weight": [
+      0.0,
+      2.0
+    ],
+    "gait.suspension_weight": [
+      -10.0,
+      0.0
+    ],
+    "gait.max_air_time": [
+      0.1,
+      1.0
+    ],
+    "gait.timing_std": [
+      0.05,
+      0.5
+    ]
+  },
+  "calibrated": false,
+  "max_rounds": 3
+}

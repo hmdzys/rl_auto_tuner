@@ -1,0 +1,5 @@
+{
+  "parameter": "weights.upright",
+  "factor": 1.2,
+  "reason": "example only: strengthen tilt penalty after verified preflight"
+}
