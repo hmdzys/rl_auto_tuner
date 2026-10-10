@@ -18,7 +18,7 @@ experiment_root下以独立目录保存每轮：baseline源码和配置、候选
 
 ## 开训前检查和既有发现
 
-使用训练venv运行 `scripts/review_mdog_training.py --output /absolute/experiment/preflight.json`，无需启动Kit。该工具依据当前文件读取配置、checkpoint维度、保存优化器LR和TensorBoard，仅适配现有mdog格式；源码格式变化时先更新工具，不能把工具不兼容当成模型故障。
+使用训练venv运行 `scripts/review_mdog_training.py --source SOURCE --output /absolute/experiment/preflight.json`，无需启动Kit。该工具依据当前文件读取配置、checkpoint维度、保存优化器LR和TensorBoard，仅适配现有mdog格式；源码格式变化时先更新工具，不能把工具不兼容当成模型故障。
 
 先检查URDF/FK/关节映射/PD/dt/动作缩放/转换资产/摩擦和碰撞。静态检查未发现错轴/非法惯量/转换错误；默认角前后脚底相差约1.21cm、对应俯仰约1.27°，是几何预测，不直接改默认角。膝动作[-1.95,-1.05]rad在硬限位内，但上端超过软限位-1.08483rad；需采集真实q/target/torque验证。自身碰撞关闭、hip无碰撞形状，不能据仿真无碰撞声称腿不会交叉。
 
